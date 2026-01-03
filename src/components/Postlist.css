@@ -1,0 +1,14 @@
+.postlist-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  
+}
+
+/* Card Hover Effect */
+.card:hover .card-img-top {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}

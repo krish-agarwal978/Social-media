@@ -1,0 +1,75 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+
+
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+/* Fix placeholder visibility in dark inputs */
+.search-input::placeholder {
+  color: #adb5bd; /* Bootstrap gray */
+  opacity: 1;     /* Firefox fix */
+}
+
+
+/* Make footer stick to bottom */
+
+
+ html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+.form-control:focus {
+  border-color: green;   /* ← GREEN BORDER */
+  box-shadow: 0 0 5px rgb(0, 128, 4); /* Optional: green glow */
+}
+
+
+@media (max-width: 576px) {
+  .footer {
+    /* HARD LIMIT: The footer cannot grow larger than this */
+    max-height: 80px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  
+  /* Hide scrollbar for cleaner look */
+  .footer ::-webkit-scrollbar {
+    display: none; 
+  }
+}
+
+
+.footer {
+  background-color: #212529;
+  color: white;
+  margin-top: auto;
+}
+
+.creative-sidebar {
+  background: linear-gradient(135deg, #0d6efd, #0a58ca);
+}
+
+.f{
+  width:100%;
+}
