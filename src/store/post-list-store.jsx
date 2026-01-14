@@ -1,5 +1,8 @@
 import { createContext, useReducer } from "react";
-
+import images from "../assets/images.jpg";
+import istock from "../assets/istockphoto-860528756-612x612.jpg";
+import reacts from "../assets/react.jpg";
+import nature from "../assets/NATURE.jpg";
 export const PostList = createContext({
   postList: [],
   addPost: () => {},
@@ -14,6 +17,7 @@ const DEFAULT_POST_LIST = [
     reactions: 2,
     userId: "user-9",
     tags: ["vacation", "Mumbai", "Enjoying"],
+    img: istock,
   },
   {
     id: "2",
@@ -22,6 +26,7 @@ const DEFAULT_POST_LIST = [
     reactions: 15,
     userId: "user-12",
     tags: ["Graduating", "Unbelievable"],
+    img: images,
   },
   {
     id: "3",
@@ -30,8 +35,17 @@ const DEFAULT_POST_LIST = [
     reactions: 8,
     userId: "user-5",
     tags: ["React", "JavaScript", "WebDev"],
-    img: "https://pbs.twimg.com/profile_images/1785867863191932928/EpOqfO6d_400x400.png",
+    img: reacts,
   },
+  {
+    id: "4",
+    title: "Nature Walk",
+    body: "Spent the day walking through the forest and reconnecting with nature.",   
+    reactions: 5,
+    userId: "user-7",
+    tags: ["Nature", "Hiking", "Outdoors"],
+    img: nature,
+  }
 ];
 
 const postListReducer = (currPostList, action) => {

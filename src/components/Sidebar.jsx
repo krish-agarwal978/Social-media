@@ -1,7 +1,8 @@
 import { FaTimes } from "react-icons/fa";
 import { useEffect, useRef } from "react";
+import { Link, NavLink } from "react-router-dom";
 
-const Sidebar = ({ isOpen, onClose, selectedtab, setSelectedtab }) => {
+const Sidebar = ({ isOpen, onClose }) => {
   const sidebarRef = useRef();
 
   useEffect(() => {
@@ -46,30 +47,40 @@ const Sidebar = ({ isOpen, onClose, selectedtab, setSelectedtab }) => {
       </button>
 
       {/* Brand */}
-      <a
-        href="/"
+      <Link
+        to="/"
         className="d-flex align-items-center mb-4 text-white text-decoration-none"
+        onClick={onClose}
       >
         <span className="fs-4">Navigation</span>
-      </a>
+      </Link>
 
       <hr />
 
       {/* Navigation */}
       <ul className="nav nav-pills flex-column mb-auto">
-        <li className="nav-item" onClick={()=>{
-            setSelectedtab("Home")
-        }}>
-          <a href="#" className={`nav-link  text-white ${selectedtab === "Home" && "active"}`} aria-current="page">
+        <li className="nav-item">
+          <NavLink
+            to="/"
+            onClick={onClose}
+            className={({ isActive }) =>
+              `nav-link text-white ${isActive ? "active" : ""}`
+            }
+            end
+          >
             Home
-          </a>
+          </NavLink>
         </li>
-         <li  onClick={()=>{
-            setSelectedtab("Create Post")
-        }}>
-           <a href="#" className={`nav-link  text-white ${selectedtab === "Create Post" && "active"}`} aria-current="page">
+        <li>
+          <NavLink
+            to="/create-post"
+            onClick={onClose}
+            className={({ isActive }) =>
+              `nav-link text-white ${isActive ? "active" : ""}`
+            }
+          >
             Create Post
-          </a>
+          </NavLink>
         </li>
       </ul>
 

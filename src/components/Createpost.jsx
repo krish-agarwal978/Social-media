@@ -9,10 +9,12 @@ import {
   FaImage,
 } from "react-icons/fa";
 import { useRef, useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { PostList } from "../store/post-list-store.jsx";
 
 const CreatePost = () => {
   const { addPost } = useContext(PostList);
+  const navigate = useNavigate();
   const userid = useRef();
   const title = useRef();
   const body = useRef();
@@ -85,6 +87,7 @@ const CreatePost = () => {
     tags.current.value = "";
     if (image.current) image.current.value = "";
     setShowToast(false);
+    navigate("/");
   };
   return (
     <div className="create-post-enhanced container-fluid px-0 bg-light">
